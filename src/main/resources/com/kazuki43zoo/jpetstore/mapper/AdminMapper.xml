@@ -27,4 +27,19 @@
       WHERE lower(email) like concat('%', #{keyword}, '%')
   </select>
 
+  <select id="getProductCount" resultType="Integer">
+      SELECT count(*) FROM product a
+  </select>
+
+  <select id="getProductList" resultType="Product">
+      SELECT
+          productid,
+          category as categoryId,
+          name,
+          descn
+      FROM
+          product a
+      WHERE lower(name) like concat('%', #{keyword}, '%')
+  </select>
+
 </mapper>

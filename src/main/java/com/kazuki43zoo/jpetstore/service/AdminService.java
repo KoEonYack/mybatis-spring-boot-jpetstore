@@ -1,6 +1,7 @@
 package com.kazuki43zoo.jpetstore.service;
 
 import com.kazuki43zoo.jpetstore.domain.Account;
+import com.kazuki43zoo.jpetstore.domain.Product;
 import com.kazuki43zoo.jpetstore.mapper.AdminMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,18 @@ public class AdminService {
         return Stream.of(Optional.ofNullable(keywords).orElse("").split("\\s+"))
                 .distinct()
                 .flatMap(x -> adminMapper.getAccountList(x).stream())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    public int getProductCount() {
+        return adminMapper.getProductCount();
+    }
+
+    public List<Product> getProductList(String keywords) {
+        return Stream.of(Optional.ofNullable(keywords).orElse("").split("\\s+"))
+                .distinct()
+                .flatMap(x -> adminMapper.getProductList(x).stream())
                 .distinct()
                 .collect(Collectors.toList());
     }

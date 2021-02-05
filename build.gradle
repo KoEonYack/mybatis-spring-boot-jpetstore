@@ -41,6 +41,8 @@ dependencies {
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.1'
     implementation 'org.springframework.boot:spring-boot-devtools:2.3.1.RELEASE'
     implementation 'mysql:mysql-connector-java:8.0.23'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 //    runtimeOnly 'org.hsqldb:hsqldb:2.5.0'
 //    runtimeOnly 'org.flywaydb:flyway-core:6.4.4'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.3.1.RELEASE'
